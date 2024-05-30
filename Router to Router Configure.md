@@ -24,23 +24,38 @@ IPSec Peer Configuration:
 Go to IP > IPsec > Peers.
 Click on the + button to add a new peer.
 Set the Address to 166.108.231.62 (Public IP of Router 2).
-Set Port to 500.
-Set Local Address to 111.119.218.65.
-Leave the rest of the settings as default unless you need specific configurations.
+Set Profile ( Example: ipsec-2)
+Exchange Mode: IKE2
+Click Apply.
 Click OK.
+
 IPSec Policy Configuration:
 
 Go to IP > IPsec > Policies.
 Click on the + button to add a new policy.
+General:
+Peer set(Example: ipsec-2)
+Click on Tunnel
 Set Src. Address to 192.168.1.0/24 (assuming you want to allow the entire subnet).
 Set Dst. Address to 10.0.0.0/24.
+Protocol: 255
+Action:
+Action: Encrypt
+Level: require
+IPsec Protocols: esp
+Proposal: set a name
 Leave the rest as default, or adjust according to your requirements.
+Click Apply.
 Click OK.
+
 IPSec Proposal Configuration:
 
 Go to IP > IPsec > Proposals.
 You can use the default proposal or create a new one.
-Ensure the proposal is set to use esp, and configure encryption algorithms (e.g., aes-256 cbc and sha256).
+Ensure the proposal is set to use esp, and configure encryption algorithms (e.g., aes-256 cbc and sha512).
+Click Apply.
+Click OK.
+
 IPSec Identity Configuration:
 
 Go to IP > IPsec > Identities.
@@ -50,6 +65,7 @@ Set Auth. Method to pre-shared-key.
 Enter the Secret (the same pre-shared key must be used on both routers).
 Click OK.
 Router 2 (Public IP: 166.108.231.62, Private IP: 10.0.0.4)
+
 Log into Router 2 using Winbox.
 
 IPSec Peer Configuration:
