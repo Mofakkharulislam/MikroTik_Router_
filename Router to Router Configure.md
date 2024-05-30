@@ -121,10 +121,6 @@ Click OK.
 
 **Verify the Configuration:**
 Check the IPSec Status:
-
-Go to IP > IPsec > Installed SAs on both routers to see if the Security Associations (SAs) are established.
-Ping Test:
-
 From a device in the 192.168.1.0/24 subnet, ping a device in the 10.0.0.0/24 subnet to verify connectivity.
 Similarly, from a device in the 10.0.0.0/24 subnet, ping a device in the 192.168.1.0/24 subnet.
 Additional Configuration (if needed)
